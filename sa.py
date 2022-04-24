@@ -45,7 +45,7 @@ class SimulatedAnnealing:
         state = self._shuffle_cities()
         sequence = [state]
         while self.T > 1:
-            state = self._generate_candidates(state)
+            state = self._next_state(state)
             sequence.append(state)
             self.T = self.T * (1 - self.annealing_rate)
         return sequence
